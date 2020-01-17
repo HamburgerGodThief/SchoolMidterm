@@ -8,9 +8,14 @@
 
 import Foundation
 
+struct PlayList {
+    let token: String
+    let offset: String
+}
+
 enum MusicRequest: STRequest {
     
-    case playList(token: String)
+    case playList(requireParameter: PlayList)
     
     case login
     
@@ -18,7 +23,7 @@ enum MusicRequest: STRequest {
         
         switch self{
             
-        case .playList(let token): return [STHTTPHeaderField.auth.rawValue: "Bearer \(token)"]
+        case .playList(let requireParameter): return [STHTTPHeaderField.auth.rawValue: "Bearer \(requireParameter.token)"]
             
         case .login: return [STHTTPHeaderField.contentType.rawValue: "application/x-www-form-urlencoded"]
 
@@ -65,7 +70,7 @@ enum MusicRequest: STRequest {
         
         switch self{
             
-        case .playList: return "/v1.1/new-hits-playlists/DZrC8m29ciOFY2JAm3/tracks?limit=20&offset=0&territory=TW"
+        case .playList(let requireParameter): return "/v1.1/new-hits-playlists/DZrC8m29ciOFY2JAm3/tracks?limit=20&offset=\(requireParameter.offset)&territory=TW"
             
         case .login: return "/oauth2/token"
 

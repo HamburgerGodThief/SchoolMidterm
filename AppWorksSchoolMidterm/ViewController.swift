@@ -34,17 +34,17 @@ class ViewController: UIViewController {
         })
     }
     
-    func getMusic(index: Int) {
+    func getMusic(index: Int, offset: String) {
         
         guard let token = UserDefaults.standard.string(forKey: "Token") else { return }
-        musicProvider.getMusic(request: MusicRequest.playList(token: token), completion: { [weak self] result in
+        musicProvider.getMusic(request: MusicRequest.playList(requireParameter: PlayList(token: token, offset: offset)), completion: { [weak self] result in
             
             switch result {
                 
             case .success(let response):
                 
                 guard let strongSelf = self else { return }
-                if (index == strongSelf.musicSelect.count - 1 && strongSelf.musicSelect.count < strongSelf.totalCount) || strongSelf.musicSelect.count == 0 {
+                if (index == strongSelf.musicSelect.count - 5 && strongSelf.musicSelect.count < strongSelf.totalCount) || strongSelf.musicSelect.count == 0 {
                     
                     strongSelf.musicData = response.data
                     strongSelf.totalCount = response.summary.total
@@ -54,6 +54,7 @@ class ViewController: UIViewController {
                                                              songName: song.name,
                                                              selectStatus: false))
                     }
+                    print("執行")
                     strongSelf.musicListTableView.reloadData()
                 }
                 
@@ -86,7 +87,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         musicListTableViewSetting()
         getToken()
-        getMusic(index: 0)
+        getMusic(index: 0, offset: "0")
     }
 
 }
@@ -118,7 +119,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        getMusic(index: indexPath.row)
+        getMusic(index: indexPath.row, offset: String(musicSelect.count))
         cell.alpha = 0
         UIView.animate(withDuration: 0.5, delay: 0.02, animations: {
             cell.alpha = 1
