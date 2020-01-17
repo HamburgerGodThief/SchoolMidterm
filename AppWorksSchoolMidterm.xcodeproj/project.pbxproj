@@ -3,27 +3,41 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		64FADB5423D14223003E1A10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FADB5323D14223003E1A10 /* AppDelegate.swift */; };
-		64FADB5623D14223003E1A10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FADB5523D14223003E1A10 /* SceneDelegate.swift */; };
 		64FADB5823D14223003E1A10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FADB5723D14223003E1A10 /* ViewController.swift */; };
 		64FADB5B23D14223003E1A10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FADB5923D14223003E1A10 /* Main.storyboard */; };
 		64FADB5D23D14224003E1A10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64FADB5C23D14224003E1A10 /* Assets.xcassets */; };
 		64FADB6023D14224003E1A10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FADB5E23D14224003E1A10 /* LaunchScreen.storyboard */; };
+		64FADB6823D14A57003E1A10 /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FADB6723D14A57003E1A10 /* TableHeaderView.swift */; };
+		64FADB6A23D14BB9003E1A10 /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FADB6923D14BB9003E1A10 /* MusicTableViewCell.swift */; };
+		64FADB6C23D14FBB003E1A10 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FADB6B23D14FBB003E1A10 /* HTTPClient.swift */; };
+		64FADB6E23D15220003E1A10 /* MusicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FADB6D23D15220003E1A10 /* MusicRequest.swift */; };
+		64FADB7023D15231003E1A10 /* MusicProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FADB6F23D15231003E1A10 /* MusicProvider.swift */; };
+		64FADB7223D1536C003E1A10 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FADB7123D1536C003E1A10 /* Music.swift */; };
+		6E2EBB77C6EEFB891E52E6C9 /* Pods_AppWorksSchoolMidterm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425734B94400E80BD68B1F39 /* Pods_AppWorksSchoolMidterm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25E848CE3A909942E0B22895 /* Pods-AppWorksSchoolMidterm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppWorksSchoolMidterm.release.xcconfig"; path = "Target Support Files/Pods-AppWorksSchoolMidterm/Pods-AppWorksSchoolMidterm.release.xcconfig"; sourceTree = "<group>"; };
+		3D08A72C063B79DACA237E31 /* Pods-AppWorksSchoolMidterm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppWorksSchoolMidterm.debug.xcconfig"; path = "Target Support Files/Pods-AppWorksSchoolMidterm/Pods-AppWorksSchoolMidterm.debug.xcconfig"; sourceTree = "<group>"; };
+		425734B94400E80BD68B1F39 /* Pods_AppWorksSchoolMidterm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppWorksSchoolMidterm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FADB5023D14223003E1A10 /* AppWorksSchoolMidterm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppWorksSchoolMidterm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FADB5323D14223003E1A10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		64FADB5523D14223003E1A10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		64FADB5723D14223003E1A10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		64FADB5A23D14223003E1A10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64FADB5C23D14224003E1A10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64FADB5F23D14224003E1A10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64FADB6123D14224003E1A10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64FADB6723D14A57003E1A10 /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
+		64FADB6923D14BB9003E1A10 /* MusicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTableViewCell.swift; sourceTree = "<group>"; };
+		64FADB6B23D14FBB003E1A10 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		64FADB6D23D15220003E1A10 /* MusicRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRequest.swift; sourceTree = "<group>"; };
+		64FADB6F23D15231003E1A10 /* MusicProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicProvider.swift; sourceTree = "<group>"; };
+		64FADB7123D1536C003E1A10 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E2EBB77C6EEFB891E52E6C9 /* Pods_AppWorksSchoolMidterm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E9F295B24504B24084ABEEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				425734B94400E80BD68B1F39 /* Pods_AppWorksSchoolMidterm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B84E0C502FFEAE813F9000F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D08A72C063B79DACA237E31 /* Pods-AppWorksSchoolMidterm.debug.xcconfig */,
+				25E848CE3A909942E0B22895 /* Pods-AppWorksSchoolMidterm.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		64FADB4723D14223003E1A10 = {
 			isa = PBXGroup;
 			children = (
 				64FADB5223D14223003E1A10 /* AppWorksSchoolMidterm */,
 				64FADB5123D14223003E1A10 /* Products */,
+				4B84E0C502FFEAE813F9000F /* Pods */,
+				2E9F295B24504B24084ABEEA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +91,35 @@
 			isa = PBXGroup;
 			children = (
 				64FADB5323D14223003E1A10 /* AppDelegate.swift */,
-				64FADB5523D14223003E1A10 /* SceneDelegate.swift */,
 				64FADB5723D14223003E1A10 /* ViewController.swift */,
-				64FADB5923D14223003E1A10 /* Main.storyboard */,
+				64FADB7423D158D8003E1A10 /* View */,
+				64FADB7323D158C3003E1A10 /* Model */,
 				64FADB5C23D14224003E1A10 /* Assets.xcassets */,
 				64FADB5E23D14224003E1A10 /* LaunchScreen.storyboard */,
 				64FADB6123D14224003E1A10 /* Info.plist */,
 			);
 			path = AppWorksSchoolMidterm;
+			sourceTree = "<group>";
+		};
+		64FADB7323D158C3003E1A10 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				64FADB7123D1536C003E1A10 /* Music.swift */,
+				64FADB6B23D14FBB003E1A10 /* HTTPClient.swift */,
+				64FADB6D23D15220003E1A10 /* MusicRequest.swift */,
+				64FADB6F23D15231003E1A10 /* MusicProvider.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		64FADB7423D158D8003E1A10 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				64FADB5923D14223003E1A10 /* Main.storyboard */,
+				64FADB6923D14BB9003E1A10 /* MusicTableViewCell.swift */,
+				64FADB6723D14A57003E1A10 /* TableHeaderView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +129,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64FADB6423D14224003E1A10 /* Build configuration list for PBXNativeTarget "AppWorksSchoolMidterm" */;
 			buildPhases = (
+				C546C3A74836FE58878D82ED /* [CP] Check Pods Manifest.lock */,
 				64FADB4C23D14223003E1A10 /* Sources */,
 				64FADB4D23D14223003E1A10 /* Frameworks */,
 				64FADB4E23D14223003E1A10 /* Resources */,
+				8000D68E4BEB23DAA01E5E47 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +190,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8000D68E4BEB23DAA01E5E47 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppWorksSchoolMidterm/Pods-AppWorksSchoolMidterm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppWorksSchoolMidterm/Pods-AppWorksSchoolMidterm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppWorksSchoolMidterm/Pods-AppWorksSchoolMidterm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C546C3A74836FE58878D82ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppWorksSchoolMidterm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		64FADB4C23D14223003E1A10 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64FADB7023D15231003E1A10 /* MusicProvider.swift in Sources */,
+				64FADB6823D14A57003E1A10 /* TableHeaderView.swift in Sources */,
+				64FADB6C23D14FBB003E1A10 /* HTTPClient.swift in Sources */,
+				64FADB6A23D14BB9003E1A10 /* MusicTableViewCell.swift in Sources */,
+				64FADB6E23D15220003E1A10 /* MusicRequest.swift in Sources */,
+				64FADB7223D1536C003E1A10 /* Music.swift in Sources */,
 				64FADB5823D14223003E1A10 /* ViewController.swift in Sources */,
 				64FADB5423D14223003E1A10 /* AppDelegate.swift in Sources */,
-				64FADB5623D14223003E1A10 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +386,7 @@
 		};
 		64FADB6523D14224003E1A10 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D08A72C063B79DACA237E31 /* Pods-AppWorksSchoolMidterm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +404,7 @@
 		};
 		64FADB6623D14224003E1A10 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25E848CE3A909942E0B22895 /* Pods-AppWorksSchoolMidterm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
