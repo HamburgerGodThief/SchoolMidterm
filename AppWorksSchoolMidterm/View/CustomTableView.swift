@@ -18,15 +18,19 @@ class CustomTableView: UITableView {
         let url = URL(string: "https://i.kfs.io/playlist/global/26541395v266/cropresize/600x600.jpg")
         currentMusicImageView.kf.setImage(with: url)
         addSubview(currentMusicImageView)
-        currentMusicImageView.translatesAutoresizingMaskIntoConstraints = false
         currentMusicImageView.contentMode = .scaleAspectFill
+        currentMusicImageView.frame = CGRect(x: 0, y: 0, width: 420, height: 420)
+
+//        currentMusicImageView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        NSLayoutConstraint.activate([
+//            currentMusicImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+//            currentMusicImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+//            currentMusicImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
+//            currentMusicImageView.heightAnchor.constraint(equalTo: self.widthAnchor)
+//        ])
         
         return currentMusicImageView
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.tableHeaderView?.systemLayoutSizeFitting(CGSize(width: self.frame.size.width, height: self.frame.size.width))
     }
     
     override init(frame: CGRect, style: UITableView.Style) {

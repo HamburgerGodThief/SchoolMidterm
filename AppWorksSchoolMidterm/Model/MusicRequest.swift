@@ -9,8 +9,10 @@
 import Foundation
 
 struct PlayList {
+    
     let token: String
     let offset: String
+    
 }
 
 enum MusicRequest: STRequest {

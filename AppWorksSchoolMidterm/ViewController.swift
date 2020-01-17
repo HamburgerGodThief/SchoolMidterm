@@ -44,7 +44,7 @@ class ViewController: UIViewController {
             case .success(let response):
                 
                 guard let strongSelf = self else { return }
-                if (index == strongSelf.musicSelect.count - 5 && strongSelf.musicSelect.count < strongSelf.totalCount) || strongSelf.musicSelect.count == 0 {
+                if (index == strongSelf.musicSelect.count - 1 && strongSelf.musicSelect.count < strongSelf.totalCount) || strongSelf.musicSelect.count == 0 {
                     
                     strongSelf.musicData = response.data
                     strongSelf.totalCount = response.summary.total
@@ -114,17 +114,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         getMusic(index: indexPath.row, offset: String(musicSelect.count))
         cell.alpha = 0
-        UIView.animate(withDuration: 0.5, delay: 0.02, animations: {
+        UIView.animate(withDuration: 0.7, delay: 0.02, animations: {
             cell.alpha = 1
         })
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
+        return 100
     }
 
 }
