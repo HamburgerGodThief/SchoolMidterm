@@ -11,25 +11,21 @@ import Kingfisher
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var musicListTableView: UITableView!
-    let headerView = TableHeaderView()
+    let musicListTableView = CustomTableView()
     let musicProvider = MusicProvider()
     var musicData = [MusicData]()
     var musicSelect = [MusicSelect]()
+    var totalCount = 0
     
-    func getMusic() {
-        musicProvider.getMusic(completion: { [weak self] result in
+    func getToken() {
+        musicProvider.login(request: MusicRequest.login, completion: { result in
             
             switch result {
                 
             case .success(let response):
                 
-                self?.musicData = response.data
-                guard let songs = self?.musicData else { return }
-                for song in songs {
-                    self?.musicSelect.append(MusicSelect(url: song.album.images[1].url, songName: song.name, selectStatus: false))
-                }
-                self?.musicListTableView.reloadData()
+                let token = response.accessToken
+                UserDefaults.standard.setValue(token, forKey: "Token")
                 
             case .failure:
                 
@@ -38,19 +34,59 @@ class ViewController: UIViewController {
         })
     }
     
+    func getMusic(index: Int) {
+        
+        guard let token = UserDefaults.standard.string(forKey: "Token") else { return }
+        musicProvider.getMusic(request: MusicRequest.playList(token: token), completion: { [weak self] result in
+            
+            switch result {
+                
+            case .success(let response):
+                
+                guard let strongSelf = self else { return }
+                if (index == strongSelf.musicSelect.count - 1 && strongSelf.musicSelect.count < strongSelf.totalCount) || strongSelf.musicSelect.count == 0 {
+                    
+                    strongSelf.musicData = response.data
+                    strongSelf.totalCount = response.summary.total
+                    let songs = strongSelf.musicData
+                    for song in songs {
+                        strongSelf.musicSelect.append(MusicSelect(url: song.album.images[1].url,
+                                                             songName: song.name,
+                                                             selectStatus: false))
+                    }
+                    strongSelf.musicListTableView.reloadData()
+                }
+                
+            case .failure(let error):
+                print(error)
+                print("text: 讀取資料失敗！")
+            }
+        })
+    }
+    
     func musicListTableViewSetting() {
         musicListTableView.delegate = self
         musicListTableView.dataSource = self
-        musicListTableView.tableHeaderView = headerView
         musicListTableView.register(MusicTableViewCell.self, forCellReuseIdentifier: "MusicTableViewCell")
-        musicListTableView.contentInsetAdjustmentBehavior = .never
         musicListTableView.separatorStyle = .none
+        musicListTableView.contentInsetAdjustmentBehavior = .never
+        
+        view.addSubview(musicListTableView)
+        musicListTableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            musicListTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            musicListTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            musicListTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            musicListTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         musicListTableViewSetting()
-        getMusic()
+        getToken()
+        getMusic(index: 0)
     }
 
 }
@@ -67,12 +103,27 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self
         cell.songImageView.kf.setImage(with: songImageURL)
         cell.songLable.text = musicSelect[indexPath.row].songName
-        
+        if musicSelect[indexPath.row].selectStatus == false {
+            cell.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            cell.favoriteButton.tintColor = .lightGray
+        } else {
+            cell.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            cell.favoriteButton.tintColor = .red
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        getMusic(index: indexPath.row)
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.5, delay: 0.02, animations: {
+            cell.alpha = 1
+        })
+        
     }
 
 }
@@ -91,5 +142,5 @@ extension ViewController: MusicTableViewCellDelegate {
             musicTableViewCell.favoriteButton.tintColor = .lightGray
         }
     }
-    
+
 }

@@ -12,12 +12,13 @@
 		64FADB5B23D14223003E1A10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FADB5923D14223003E1A10 /* Main.storyboard */; };
 		64FADB5D23D14224003E1A10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64FADB5C23D14224003E1A10 /* Assets.xcassets */; };
 		64FADB6023D14224003E1A10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FADB5E23D14224003E1A10 /* LaunchScreen.storyboard */; };
-		64FADB6823D14A57003E1A10 /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FADB6723D14A57003E1A10 /* TableHeaderView.swift */; };
+		64FADB6823D14A57003E1A10 /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FADB6723D14A57003E1A10 /* CustomTableView.swift */; };
 		64FADB6A23D14BB9003E1A10 /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FADB6923D14BB9003E1A10 /* MusicTableViewCell.swift */; };
 		64FADB6C23D14FBB003E1A10 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FADB6B23D14FBB003E1A10 /* HTTPClient.swift */; };
 		64FADB6E23D15220003E1A10 /* MusicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FADB6D23D15220003E1A10 /* MusicRequest.swift */; };
 		64FADB7023D15231003E1A10 /* MusicProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FADB6F23D15231003E1A10 /* MusicProvider.swift */; };
 		64FADB7223D1536C003E1A10 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FADB7123D1536C003E1A10 /* Music.swift */; };
+		64FADB7623D18849003E1A10 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FADB7523D18849003E1A10 /* User.swift */; };
 		6E2EBB77C6EEFB891E52E6C9 /* Pods_AppWorksSchoolMidterm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425734B94400E80BD68B1F39 /* Pods_AppWorksSchoolMidterm.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,12 +33,13 @@
 		64FADB5C23D14224003E1A10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64FADB5F23D14224003E1A10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64FADB6123D14224003E1A10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		64FADB6723D14A57003E1A10 /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
+		64FADB6723D14A57003E1A10 /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 		64FADB6923D14BB9003E1A10 /* MusicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTableViewCell.swift; sourceTree = "<group>"; };
 		64FADB6B23D14FBB003E1A10 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		64FADB6D23D15220003E1A10 /* MusicRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRequest.swift; sourceTree = "<group>"; };
 		64FADB6F23D15231003E1A10 /* MusicProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicProvider.swift; sourceTree = "<group>"; };
 		64FADB7123D1536C003E1A10 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		64FADB7523D18849003E1A10 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				64FADB7123D1536C003E1A10 /* Music.swift */,
+				64FADB7523D18849003E1A10 /* User.swift */,
 				64FADB6B23D14FBB003E1A10 /* HTTPClient.swift */,
 				64FADB6D23D15220003E1A10 /* MusicRequest.swift */,
 				64FADB6F23D15231003E1A10 /* MusicProvider.swift */,
@@ -117,7 +120,7 @@
 			children = (
 				64FADB5923D14223003E1A10 /* Main.storyboard */,
 				64FADB6923D14BB9003E1A10 /* MusicTableViewCell.swift */,
-				64FADB6723D14A57003E1A10 /* TableHeaderView.swift */,
+				64FADB6723D14A57003E1A10 /* CustomTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -238,10 +241,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				64FADB7023D15231003E1A10 /* MusicProvider.swift in Sources */,
-				64FADB6823D14A57003E1A10 /* TableHeaderView.swift in Sources */,
+				64FADB6823D14A57003E1A10 /* CustomTableView.swift in Sources */,
 				64FADB6C23D14FBB003E1A10 /* HTTPClient.swift in Sources */,
 				64FADB6A23D14BB9003E1A10 /* MusicTableViewCell.swift in Sources */,
 				64FADB6E23D15220003E1A10 /* MusicRequest.swift in Sources */,
+				64FADB7623D18849003E1A10 /* User.swift in Sources */,
 				64FADB7223D1536C003E1A10 /* Music.swift in Sources */,
 				64FADB5823D14223003E1A10 /* ViewController.swift in Sources */,
 				64FADB5423D14223003E1A10 /* AppDelegate.swift in Sources */,

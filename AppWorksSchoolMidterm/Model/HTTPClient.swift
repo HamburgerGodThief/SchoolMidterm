@@ -75,6 +75,23 @@ extension STRequest {
 
         return request
     }
+    
+    func login() -> URLRequest {
+
+        let urlString = "https://account.kkbox.com" + endPoint
+
+        let url = URL(string: urlString)!
+
+        var request = URLRequest(url: url)
+
+        request.allHTTPHeaderFields = headers
+        
+        request.httpBody = body
+
+        request.httpMethod = method
+
+        return request
+    }
 }
 
 class HTTPClient {
@@ -89,9 +106,43 @@ class HTTPClient {
 
     func request(_ stRequest: STRequest, completion: @escaping (Result<Data>) -> Void) {
 
-        URLSession.shared.dataTask(
-            with: stRequest.makeRequest(),
-            completionHandler: { (data, response, error) in
+        URLSession.shared.dataTask(with: stRequest.makeRequest(), completionHandler: { (data, response, error) in
+
+            guard error == nil else {
+
+                return completion(Result.failure(error!))
+            }
+                
+            // swiftlint:disable force_cast
+            let httpResponse = response as! HTTPURLResponse
+            // swiftlint:enable force_cast
+            let statusCode = httpResponse.statusCode
+
+            switch statusCode {
+
+            case 200..<300:
+
+                completion(Result.success(data!))
+
+            case 400..<500:
+
+                completion(Result.failure(STHTTPClientError.clientError(data!)))
+
+            case 500..<600:
+
+                completion(Result.failure(STHTTPClientError.serverError))
+
+            default: return
+
+                completion(Result.failure(STHTTPClientError.unexpectedError))
+            }
+
+        }).resume()
+    }
+    
+    func login(_ stRequest: STRequest, completion: @escaping (Result<Data>) -> Void) {
+
+        URLSession.shared.dataTask(with: stRequest.login(), completionHandler: { (data, response, error) in
 
             guard error == nil else {
 
