@@ -2,21 +2,17 @@ PODS:
   - Kingfisher (5.11.0):
     - Kingfisher/Core (= 5.11.0)
   - Kingfisher/Core (5.11.0)
-  - TCParallax (2.0.3)
 
 DEPENDENCIES:
   - Kingfisher (~> 5.0)
-  - TCParallax
 
 SPEC REPOS:
   trunk:
     - Kingfisher
-    - TCParallax
 
 SPEC CHECKSUMS:
   Kingfisher: 4569606189149e19c7d9439f47e885d0679b7a90
-  TCParallax: b729e5c1565c09ee596d80f1dbb438cb40a8e407
 
-PODFILE CHECKSUM: c5a4d053422a58732999e7c32e8da73517b44634
+PODFILE CHECKSUM: 4d32e04a8636f9b9108e17fb2e14aecbe90702c4
 
 COCOAPODS: 1.8.4
