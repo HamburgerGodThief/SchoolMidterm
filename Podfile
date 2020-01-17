@@ -7,5 +7,5 @@ target 'AppWorksSchoolMidterm' do
 
   # Pods for AppWorksSchoolMidterm
   pod 'Kingfisher', '~> 5.0'
-
+  pod 'TCParallax'
 end

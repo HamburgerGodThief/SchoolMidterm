@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     var musicData = [MusicData]()
     var musicSelect = [MusicSelect]()
     var totalCount = 0
+    let topImage = UIImageView()
+
     
     func getToken() {
         musicProvider.login(request: MusicRequest.login, completion: { result in
@@ -71,6 +73,8 @@ class ViewController: UIViewController {
         musicListTableView.register(MusicTableViewCell.self, forCellReuseIdentifier: "MusicTableViewCell")
         musicListTableView.separatorStyle = .none
         musicListTableView.contentInsetAdjustmentBehavior = .never
+        musicListTableView.estimatedRowHeight = 100
+        musicListTableView.rowHeight = UITableView.automaticDimension
         
         view.addSubview(musicListTableView)
         musicListTableView.translatesAutoresizingMaskIntoConstraints = false
@@ -121,12 +125,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             cell.alpha = 1
         })
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return 100
-    }
-
 }
 
 extension ViewController: MusicTableViewCellDelegate {
